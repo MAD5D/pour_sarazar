@@ -230,6 +230,7 @@
     let tableau_sudoku = new Array(81).fill(0);
     let tableau_sudoku_valeur_possible = new Array(81).fill(0);
     let tableau_sudoku_avec_case_vide;
+    let tableau_sudoku_indice_solution;
     //console.log(tableau_sudoku_valeur_possible);
     tableau_sudoku_valeur_possible[case_courante] = [1,2,3,4,5,6,7,8,9];
     let interval_a_stop = setInterval(function(){
@@ -1055,9 +1056,16 @@ function etape_enlevage_de_case(){
 		document.getElementById('avec_blanc_' + i).innerHTML = tableau_sudoku_avec_case_vide[i];
 		i++;
 	}
+	resoudre_le_sudoku_en_X_etape();
+}
+
+function resoudre_le_sudoku_en_X_etape(){
 
 }
 
+function resolution_etape_1(){
+
+}
 
 
   });
