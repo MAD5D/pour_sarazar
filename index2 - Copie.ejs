@@ -443,39 +443,7 @@
     //console.log(tableau_sudoku_valeur_possible);
     tableau_sudoku_valeur_possible[case_courante] = [1,2,3,4,5,6,7,8,9];
     let interval_a_stop = setInterval(function(){
-
-			//////FIN VERIF
-			clearInterval(interval_a_stop);
-			console.log('On créer la grille');
-			//etape_enlevage_de_case();
-			let tempo = creer_grille();
-			console.log(tempo);
-			tableau_sudoku = [ ... tempo];
-			etape_enlevage_de_case();
-
-			console.log('On l\'affiche');
-			let iii = 0;
-			while(iii<81){
-				document.getElementById(iii).innerHTML = tempo[iii];
-				iii++;
-			}
-		
-    }, 10);
-
-
-function creer_grille(){
-
-	let case_courante = 0;//const arr = new Array(81).fill(0);
-  let tableau_sudoku = new Array(81).fill(0);
-  let tableau_sudoku_valeur_possible = new Array(81).fill(0);
-  let tableau_sudoku_avec_case_vide;
-  let tableau_sudoku_indice_solution;
-  //console.log(tableau_sudoku_valeur_possible);
-  tableau_sudoku_valeur_possible[case_courante] = [1,2,3,4,5,6,7,8,9];
-
-
-
-	while(case_courante < 81){
+			//let tableau_temp = tableau_sudoku_valeur_possible[case_courante];
 			//////VERIF A FAIRE
 			let case_minimal_a_check = Math.floor(case_courante/9)*9;
 			let case_maximal_a_check = case_minimal_a_check + 8;
@@ -829,7 +797,7 @@ if(blok_colonne == 2 && blok_ligne == 2){
 			}
 }
 
-if(blok_colonne == 3 && blok_ligne == 2){
+if(blok_colonne == 3 && blok_ligne == 2){	
 			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[33]);//case 1
 			if(indice_a_enlever != -1){
 				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
@@ -994,8 +962,9 @@ if(blok_colonne == 3 && blok_ligne == 3){
 				tableau_sudoku[case_courante] = tableau_sudoku_valeur_possible[case_courante][chiffre];
 				case_courante++;
 				if(case_courante >= 81){
+					clearInterval(interval_a_stop);
 					console.log('FINIIIIIIIIIIIIIIIIIIII');
-					return tableau_sudoku;
+					etape_enlevage_de_case();
 				}else{
 					tableau_sudoku_valeur_possible[case_courante] = [1,2,3,4,5,6,7,8,9];
 				}
@@ -1015,10 +984,9 @@ if(blok_colonne == 3 && blok_ligne == 3){
 					console.log('BUUUUUUUUUUUUUUG');
 				}
 			}
-		}
 
-		return tableau_sudoku;
-}
+    }, 10);
+
 
 function etape_enlevage_de_case(){
 	console.log('je suis censé enlever des cases');

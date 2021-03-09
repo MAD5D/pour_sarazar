@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Tuto WebSocket avec Socket.io et NodeJS par PracticalProgramming.fr</title>
+  <link rel="stylesheet" type="text/css" href="default.css">
+</head>
+
+<body>
+
+<div class="grille">
+  <div class="secteur">
+    <div class="case"><div class="contenue_case" id='0'></div></div>
+    <div class="case"><div class="contenue_case" id='1'></div></div>
+    <div class="case"><div class="contenue_case" id='2'></div></div>
+    <div class="case"><div class="contenue_case" id='9'></div></div>
+    <div class="case"><div class="contenue_case" id='10'></div></div>
+    <div class="case"><div class="contenue_case" id='11'></div></div>
+    <div class="case"><div class="contenue_case" id='18'></div></div>
+    <div class="case"><div class="contenue_case" id='19'></div></div>
+    <div class="case"><div class="contenue_case" id='20'></div></div>
+  </div>
+  <div class="secteur">
+    <div class="case"><div class="contenue_case" id='3'></div></div>
+    <div class="case"><div class="contenue_case" id='4'></div></div>
+    <div class="case"><div class="contenue_case" id='5'></div></div>
+    <div class="case"><div class="contenue_case" id='12'></div></div>
+    <div class="case"><div class="contenue_case" id='13'></div></div>
+    <div class="case"><div class="contenue_case" id='14'></div></div>
+    <div class="case"><div class="contenue_case" id='21'></div></div>
+    <div class="case"><div class="contenue_case" id='22'></div></div>
+    <div class="case"><div class="contenue_case" id='23'></div></div>
+  </div>
+  <div class="secteur">
+    <div class="case"><div class="contenue_case" id='6'></div></div>
+    <div class="case"><div class="contenue_case" id='7'></div></div>
+    <div class="case"><div class="contenue_case" id='8'></div></div>
+    <div class="case"><div class="contenue_case" id='15'></div></div>
+    <div class="case"><div class="contenue_case" id='16'></div></div>
+    <div class="case"><div class="contenue_case" id='17'></div></div>
+    <div class="case"><div class="contenue_case" id='24'></div></div>
+    <div class="case"><div class="contenue_case" id='25'></div></div>
+    <div class="case"><div class="contenue_case" id='26'></div></div>
+  </div>
+
+
+  <div class="secteur">
+    <div class="case"><div class="contenue_case" id='27'></div></div>
+    <div class="case"><div class="contenue_case" id='28'></div></div>
+    <div class="case"><div class="contenue_case" id='29'></div></div>
+    <div class="case"><div class="contenue_case" id='36'></div></div>
+    <div class="case"><div class="contenue_case" id='37'></div></div>
+    <div class="case"><div class="contenue_case" id='38'></div></div>
+    <div class="case"><div class="contenue_case" id='45'></div></div>
+    <div class="case"><div class="contenue_case" id='46'></div></div>
+    <div class="case"><div class="contenue_case" id='47'></div></div>
+  </div>
+  <div class="secteur">
+    <div class="case"><div class="contenue_case" id='30'></div></div>
+    <div class="case"><div class="contenue_case" id='31'></div></div>
+    <div class="case"><div class="contenue_case" id='32'></div></div>
+    <div class="case"><div class="contenue_case" id='39'></div></div>
+    <div class="case"><div class="contenue_case" id='40'></div></div>
+    <div class="case"><div class="contenue_case" id='41'></div></div>
+    <div class="case"><div class="contenue_case" id='48'></div></div>
+    <div class="case"><div class="contenue_case" id='49'></div></div>
+    <div class="case"><div class="contenue_case" id='50'></div></div>
+  </div>
+  <div class="secteur">
+    <div class="case"><div class="contenue_case" id='33'></div></div>
+    <div class="case"><div class="contenue_case" id='34'></div></div>
+    <div class="case"><div class="contenue_case" id='35'></div></div>
+    <div class="case"><div class="contenue_case" id='42'></div></div>
+    <div class="case"><div class="contenue_case" id='43'></div></div>
+    <div class="case"><div class="contenue_case" id='44'></div></div>
+    <div class="case"><div class="contenue_case" id='51'></div></div>
+    <div class="case"><div class="contenue_case" id='52'></div></div>
+    <div class="case"><div class="contenue_case" id='53'></div></div>
+  </div>
+
+
+  <div class="secteur">
+    <div class="case"><div class="contenue_case" id='54'></div></div>
+    <div class="case"><div class="contenue_case" id='55'></div></div>
+    <div class="case"><div class="contenue_case" id='56'></div></div>
+    <div class="case"><div class="contenue_case" id='63'></div></div>
+    <div class="case"><div class="contenue_case" id='64'></div></div>
+    <div class="case"><div class="contenue_case" id='65'></div></div>
+    <div class="case"><div class="contenue_case" id='72'></div></div>
+    <div class="case"><div class="contenue_case" id='73'></div></div>
+    <div class="case"><div class="contenue_case" id='74'></div></div>
+  </div>
+  <div class="secteur">
+    <div class="case"><div class="contenue_case" id='57'></div></div>
+    <div class="case"><div class="contenue_case" id='58'></div></div>
+    <div class="case"><div class="contenue_case" id='59'></div></div>
+    <div class="case"><div class="contenue_case" id='66'></div></div>
+    <div class="case"><div class="contenue_case" id='67'></div></div>
+    <div class="case"><div class="contenue_case" id='68'></div></div>
+    <div class="case"><div class="contenue_case" id='75'></div></div>
+    <div class="case"><div class="contenue_case" id='76'></div></div>
+    <div class="case"><div class="contenue_case" id='77'></div></div>
+  </div>
+  <div class="secteur">
+    <div class="case"><div class="contenue_case" id='60'></div></div>
+    <div class="case"><div class="contenue_case" id='61'></div></div>
+    <div class="case"><div class="contenue_case" id='62'></div></div>
+    <div class="case"><div class="contenue_case" id='69'></div></div>
+    <div class="case"><div class="contenue_case" id='70'></div></div>
+    <div class="case"><div class="contenue_case" id='71'></div></div>
+    <div class="case"><div class="contenue_case" id='78'></div></div>
+    <div class="case"><div class="contenue_case" id='79'></div></div>
+    <div class="case"><div class="contenue_case" id='80'></div></div>
+  </div>
+</div>
+  <!-- CREATION SOCKET -->
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    const socket = io();
+
+    socket.on('news', function(msg){
+      let i = 0;
+      console.log(msg);
+      msg.forEach(element => {
+        if(element){
+          document.getElementById(i).innerHTML = (element+1);
+        }
+        else{
+        	document.getElementById(i).innerHTML = "";
+        }
+        i++;
+      });
+    });
+
+
+socket.on('maj_grille', function(msg){
+	console.log(msg);
+	document.getElementById(msg[0]).innerHTML = msg[1];  
+});
+
+
+  </script>
+
+  <!-- FIN CODE SOCKET -->
+</body>
+</html>
