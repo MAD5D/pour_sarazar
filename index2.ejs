@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Tuto WebSocket avec Socket.io et NodeJS par PracticalProgramming.fr</title>
+  <link rel="stylesheet" type="text/css" href="default.css">
+</head>
+
+<body>
+
+<div class="grille">
+  <div class="secteur">
+    <div class="case"><div class="contenue_case" id='0'></div></div>
+    <div class="case"><div class="contenue_case" id='1'></div></div>
+    <div class="case"><div class="contenue_case" id='2'></div></div>
+    <div class="case"><div class="contenue_case" id='9'></div></div>
+    <div class="case"><div class="contenue_case" id='10'></div></div>
+    <div class="case"><div class="contenue_case" id='11'></div></div>
+    <div class="case"><div class="contenue_case" id='18'></div></div>
+    <div class="case"><div class="contenue_case" id='19'></div></div>
+    <div class="case"><div class="contenue_case" id='20'></div></div>
+  </div>
+  <div class="secteur">
+    <div class="case"><div class="contenue_case" id='3'></div></div>
+    <div class="case"><div class="contenue_case" id='4'></div></div>
+    <div class="case"><div class="contenue_case" id='5'></div></div>
+    <div class="case"><div class="contenue_case" id='12'></div></div>
+    <div class="case"><div class="contenue_case" id='13'></div></div>
+    <div class="case"><div class="contenue_case" id='14'></div></div>
+    <div class="case"><div class="contenue_case" id='21'></div></div>
+    <div class="case"><div class="contenue_case" id='22'></div></div>
+    <div class="case"><div class="contenue_case" id='23'></div></div>
+  </div>
+  <div class="secteur">
+    <div class="case"><div class="contenue_case" id='6'></div></div>
+    <div class="case"><div class="contenue_case" id='7'></div></div>
+    <div class="case"><div class="contenue_case" id='8'></div></div>
+    <div class="case"><div class="contenue_case" id='15'></div></div>
+    <div class="case"><div class="contenue_case" id='16'></div></div>
+    <div class="case"><div class="contenue_case" id='17'></div></div>
+    <div class="case"><div class="contenue_case" id='24'></div></div>
+    <div class="case"><div class="contenue_case" id='25'></div></div>
+    <div class="case"><div class="contenue_case" id='26'></div></div>
+  </div>
+
+
+  <div class="secteur">
+    <div class="case"><div class="contenue_case" id='27'></div></div>
+    <div class="case"><div class="contenue_case" id='28'></div></div>
+    <div class="case"><div class="contenue_case" id='29'></div></div>
+    <div class="case"><div class="contenue_case" id='36'></div></div>
+    <div class="case"><div class="contenue_case" id='37'></div></div>
+    <div class="case"><div class="contenue_case" id='38'></div></div>
+    <div class="case"><div class="contenue_case" id='45'></div></div>
+    <div class="case"><div class="contenue_case" id='46'></div></div>
+    <div class="case"><div class="contenue_case" id='47'></div></div>
+  </div>
+  <div class="secteur">
+    <div class="case"><div class="contenue_case" id='30'></div></div>
+    <div class="case"><div class="contenue_case" id='31'></div></div>
+    <div class="case"><div class="contenue_case" id='32'></div></div>
+    <div class="case"><div class="contenue_case" id='39'></div></div>
+    <div class="case"><div class="contenue_case" id='40'></div></div>
+    <div class="case"><div class="contenue_case" id='41'></div></div>
+    <div class="case"><div class="contenue_case" id='48'></div></div>
+    <div class="case"><div class="contenue_case" id='49'></div></div>
+    <div class="case"><div class="contenue_case" id='50'></div></div>
+  </div>
+  <div class="secteur">
+    <div class="case"><div class="contenue_case" id='33'></div></div>
+    <div class="case"><div class="contenue_case" id='34'></div></div>
+    <div class="case"><div class="contenue_case" id='35'></div></div>
+    <div class="case"><div class="contenue_case" id='42'></div></div>
+    <div class="case"><div class="contenue_case" id='43'></div></div>
+    <div class="case"><div class="contenue_case" id='44'></div></div>
+    <div class="case"><div class="contenue_case" id='51'></div></div>
+    <div class="case"><div class="contenue_case" id='52'></div></div>
+    <div class="case"><div class="contenue_case" id='53'></div></div>
+  </div>
+
+
+  <div class="secteur">
+    <div class="case"><div class="contenue_case" id='54'></div></div>
+    <div class="case"><div class="contenue_case" id='55'></div></div>
+    <div class="case"><div class="contenue_case" id='56'></div></div>
+    <div class="case"><div class="contenue_case" id='63'></div></div>
+    <div class="case"><div class="contenue_case" id='64'></div></div>
+    <div class="case"><div class="contenue_case" id='65'></div></div>
+    <div class="case"><div class="contenue_case" id='72'></div></div>
+    <div class="case"><div class="contenue_case" id='73'></div></div>
+    <div class="case"><div class="contenue_case" id='74'></div></div>
+  </div>
+  <div class="secteur">
+    <div class="case"><div class="contenue_case" id='57'></div></div>
+    <div class="case"><div class="contenue_case" id='58'></div></div>
+    <div class="case"><div class="contenue_case" id='59'></div></div>
+    <div class="case"><div class="contenue_case" id='66'></div></div>
+    <div class="case"><div class="contenue_case" id='67'></div></div>
+    <div class="case"><div class="contenue_case" id='68'></div></div>
+    <div class="case"><div class="contenue_case" id='75'></div></div>
+    <div class="case"><div class="contenue_case" id='76'></div></div>
+    <div class="case"><div class="contenue_case" id='77'></div></div>
+  </div>
+  <div class="secteur">
+    <div class="case"><div class="contenue_case" id='60'></div></div>
+    <div class="case"><div class="contenue_case" id='61'></div></div>
+    <div class="case"><div class="contenue_case" id='62'></div></div>
+    <div class="case"><div class="contenue_case" id='69'></div></div>
+    <div class="case"><div class="contenue_case" id='70'></div></div>
+    <div class="case"><div class="contenue_case" id='71'></div></div>
+    <div class="case"><div class="contenue_case" id='78'></div></div>
+    <div class="case"><div class="contenue_case" id='79'></div></div>
+    <div class="case"><div class="contenue_case" id='80'></div></div>
+  </div>
+</div>
+
+<div class="grille">
+  <div class="secteur">
+    <div class="case"><div class="contenue_case" id='avec_blanc_0'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_1'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_2'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_9'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_10'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_11'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_18'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_19'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_20'></div></div>
+  </div>
+  <div class="secteur">
+    <div class="case"><div class="contenue_case" id='avec_blanc_3'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_4'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_5'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_12'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_13'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_14'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_21'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_22'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_23'></div></div>
+  </div>
+  <div class="secteur">
+    <div class="case"><div class="contenue_case" id='avec_blanc_6'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_7'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_8'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_15'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_16'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_17'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_24'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_25'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_26'></div></div>
+  </div>
+
+
+  <div class="secteur">
+    <div class="case"><div class="contenue_case" id='avec_blanc_27'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_28'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_29'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_36'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_37'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_38'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_45'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_46'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_47'></div></div>
+  </div>
+  <div class="secteur">
+    <div class="case"><div class="contenue_case" id='avec_blanc_30'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_31'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_32'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_39'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_40'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_41'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_48'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_49'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_50'></div></div>
+  </div>
+  <div class="secteur">
+    <div class="case"><div class="contenue_case" id='avec_blanc_33'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_34'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_35'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_42'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_43'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_44'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_51'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_52'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_53'></div></div>
+  </div>
+
+
+  <div class="secteur">
+    <div class="case"><div class="contenue_case" id='avec_blanc_54'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_55'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_56'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_63'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_64'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_65'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_72'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_73'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_74'></div></div>
+  </div>
+  <div class="secteur">
+    <div class="case"><div class="contenue_case" id='avec_blanc_57'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_58'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_59'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_66'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_67'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_68'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_75'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_76'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_77'></div></div>
+  </div>
+  <div class="secteur">
+    <div class="case"><div class="contenue_case" id='avec_blanc_60'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_61'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_62'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_69'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_70'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_71'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_78'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_79'></div></div>
+    <div class="case"><div class="contenue_case" id='avec_blanc_80'></div></div>
+  </div>
+</div>
+
+
+
+  
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    let case_courante = 0;//const arr = new Array(81).fill(0);
+    let tableau_sudoku = new Array(81).fill(0);
+    let tableau_sudoku_valeur_possible = new Array(81).fill(0);
+    let tableau_sudoku_avec_case_vide;
+    //console.log(tableau_sudoku_valeur_possible);
+    tableau_sudoku_valeur_possible[case_courante] = [1,2,3,4,5,6,7,8,9];
+    let interval_a_stop = setInterval(function(){
+			let tableau_temp = tableau_sudoku_valeur_possible[case_courante];
+			//////VERIF A FAIRE
+			let case_minimal_a_check = Math.floor(case_courante/9)*9;
+			let case_maximal_a_check = case_minimal_a_check + 8;
+//Vérification honrizontale
+			let indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[case_minimal_a_check]);/*case 1*/
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[case_minimal_a_check+1]);/*case 2*/
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[case_minimal_a_check+2]);/*case 3*/
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[case_minimal_a_check+3]);/*case 4*/
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[case_minimal_a_check+4]);/*case 5*/
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[case_minimal_a_check+5]);/*case 6*/
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[case_minimal_a_check+6]);/*case 7*/
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[case_minimal_a_check+7]);/*case 8*/
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[case_minimal_a_check+8]);/*case 9*/
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//Vérification vertical
+let decalage_colonne = case_courante % 9;
+//case 1
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[decalage_colonne]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 2
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[decalage_colonne+9]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 3
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[decalage_colonne+18]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 4
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[decalage_colonne+27]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 5
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[decalage_colonne+36]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 6
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[decalage_colonne+45]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 7
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[decalage_colonne+54]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 8
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[decalage_colonne+63]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 9
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[decalage_colonne+72]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+
+//Vérification blok
+let colonne = case_courante%9;
+let ligne = Math.floor(case_courante/9);
+
+let blok_colonne = "";
+let blok_ligne = "";
+if(colonne >= 0 && colonne < 3){
+	blok_colonne = 1;
+}
+if(colonne >= 3 && colonne < 6){
+	blok_colonne = 2;
+}
+if(colonne >= 6 && colonne < 9){
+	blok_colonne = 3;
+}
+
+if(ligne >= 0 && ligne < 3){
+	blok_ligne = 1;
+}
+if(ligne >= 3 && ligne < 6){
+	blok_ligne = 2;
+}
+if(ligne >= 6 && ligne < 9){
+	blok_ligne = 3;
+}
+
+if(blok_colonne == 1 && blok_ligne == 1){
+	//case 1
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[0]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 2
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[1]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 3
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[2]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 4
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[9]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 5
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[10]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 6
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[11]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 7
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[18]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 8
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[19]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 9
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[20]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+}
+
+if(blok_colonne == 2 && blok_ligne == 1){
+	//case 1
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[3]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 2
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[4]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 3
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[5]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 4
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[12]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 5
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[13]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 6
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[14]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 7
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[21]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 8
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[22]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 9
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[23]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+}
+
+if(blok_colonne == 3 && blok_ligne == 1){
+	//case 1
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[6]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 2
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[7]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 3
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[8]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 4
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[15]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 5
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[16]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 6
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[17]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 7
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[24]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 8
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[25]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 9
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[26]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+}
+
+if(blok_colonne == 1 && blok_ligne == 2){
+	//case 1
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[27]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 2
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[28]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 3
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[29]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 4
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[36]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 5
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[37]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 6
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[38]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 7
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[45]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 8
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[46]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 9
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[47]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+}
+
+if(blok_colonne == 2 && blok_ligne == 2){
+	//case 1
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[30]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 2
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[31]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 3
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[32]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 4
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[39]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 5
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[40]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 6
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[41]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 7
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[48]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 8
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[49]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 9
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[50]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+}
+
+if(blok_colonne == 3 && blok_ligne == 2){
+	//case 1
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[33]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 2
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[34]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 3
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[35]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 4
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[42]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 5
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[43]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 6
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[44]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 7
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[51]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 8
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[52]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 9
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[53]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+}
+
+if(blok_colonne == 1 && blok_ligne == 3){
+	//case 1
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[54]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 2
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[55]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 3
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[56]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 4
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[63]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 5
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[64]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 6
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[65]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 7
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[72]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 8
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[73]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 9
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[74]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+}
+
+if(blok_colonne == 2 && blok_ligne == 3){
+	//case 1
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[57]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 2
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[58]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 3
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[59]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 4
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[66]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 5
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[67]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 6
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[68]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 7
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[75]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 8
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[76]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 9
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[77]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+}
+
+if(blok_colonne == 3 && blok_ligne == 3){
+	//case 1
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[60]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 2
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[61]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 3
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[62]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 4
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[69]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 5
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[70]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 6
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[71]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 7
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[78]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 8
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[79]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+//case 9
+			indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[80]);
+			if(indice_a_enlever != -1){
+				tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1)
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+				console.log(indice_a_enlever);
+			}
+}
+
+
+
+console.log('col : ' + blok_colonne + ' ligne : ' + blok_ligne);
+
+			//////FIN VERIF
+			if(tableau_sudoku_valeur_possible[case_courante].length > 0){
+				let chiffre = (Math.floor(Math.random() * Math.floor(tableau_sudoku_valeur_possible[case_courante].length)));
+				console.log(tableau_sudoku_valeur_possible[case_courante]);
+
+				tableau_sudoku_valeur_possible[case_courante].length
+				document.getElementById(case_courante).innerHTML = tableau_sudoku_valeur_possible[case_courante][chiffre];
+				tableau_sudoku[case_courante] = tableau_sudoku_valeur_possible[case_courante][chiffre];
+				case_courante++;
+				if(case_courante >= 81){
+					clearInterval(interval_a_stop);
+					console.log('FINIIIIIIIIIIIIIIIIIIII');
+					etape_enlevage_de_case();
+				}else{
+					tableau_sudoku_valeur_possible[case_courante] = [1,2,3,4,5,6,7,8,9];
+				}
+			}
+			else{
+				case_courante--;
+				indice_a_enlever = tableau_sudoku_valeur_possible[case_courante].indexOf(tableau_sudoku[case_courante]);
+				if(indice_a_enlever != -1){
+					tableau_sudoku_valeur_possible[case_courante].splice(indice_a_enlever, 1);
+					tableau_sudoku[case_courante] = "";
+					document.getElementById(case_courante).innerHTML = "";
+					console.log(tableau_sudoku_valeur_possible[case_courante]);
+					console.log(indice_a_enlever);
+				}
+				else{
+					console.log('BUUUUUUUUUUUUUUG');
+					console.log('BUUUUUUUUUUUUUUG');
+					console.log('BUUUUUUUUUUUUUUG');
+					console.log('BUUUUUUUUUUUUUUG');
+				}
+
+				console.log(`ca pue`);	
+			}
+
+    }, 5);
+
+
+function etape_enlevage_de_case(){
+	console.log('je suis censé enlever des cases');
+	tableau_sudoku_avec_case_vide = [ ... tableau_sudoku];
+	console.log(tableau_sudoku);
+	console.log(tableau_sudoku_avec_case_vide);
+
+	let i = 0;
+	while(i < 40){
+		let case_a_vider = (Math.floor(Math.random() * 81));
+		if(tableau_sudoku_avec_case_vide[case_a_vider] == ""){
+
+		}
+		else{
+			tableau_sudoku_avec_case_vide[case_a_vider] = "";
+			i++;	
+		}
+	}
+
+	console.log(tableau_sudoku_avec_case_vide);
+
+	i = 0;
+	while(i<81){
+		document.getElementById('avec_blanc_' + i).innerHTML = tableau_sudoku_avec_case_vide[i];
+		i++;
+	}
+
+}
+
+
+
+  });
+</script>
+
+</body>
+</html>

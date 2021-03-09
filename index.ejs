@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ceci est le titre</title>
+	</head>
+	<body>
+		<h1>Bienvenue {{ name }}</h1>
+		<p>sdkfj sdfjsdf sdf sdfsdfj sdfjsdf sdf sdfsdfj sdfjsdf sdf sdfsdfj sdfjsdf sdf sdfsdfj sdfjsdf sdf sdfsdfj sdfjsdf sdf sdfsdfj sdfjsdf sdf sdfsdfj sdfjsdf sdf sdfsdfj sdfjsdf sdf sdfsdfj sdfjsdf sdf sdfsdfj sdfjsdf sdf sdfsdf sdf sd fd</p>
+		<p><%= test %></p>
+		<img src="/bord_gauche.png" />
+		<audio id="musique"
+        controls
+        src="./musique/perso/koQN49gW5fE.mp3">
+            Your browser does not support the
+            <code>audio</code> element.
+    </audio>
+    <script>
+    	document.addEventListener('DOMContentLoaded', function() {
+    		console.log('????');
+    		let module_audio = document.getElementById('musique');
+    		module_audio.volume = 0.2;
+			module_audio.play();
+			module_audio.addEventListener('ended', function(){
+				console.log('FINI');
+
+
+				var xhr = new XMLHttpRequest();
+				xhr.onreadystatechange = function() {
+					if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
+						console.log('réponse du serveur');
+
+
+						console.log(xhr.responseText);
+						module_audio.src = xhr.responseText;
+						module_audio.play();
+						/*var reponse_serveur = JSON.parse(xhr.responseText);
+
+						*/
+					}
+					else{
+					}
+				};
+
+				xhr.open("POST", "./nouvelle_musique", true);
+				xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+				xhr.send("");
+				//xhr.send("demande=ajout_talent&id_talent=" + radios[i].value + "");
+
+
+
+			});
+
+    	});
+    </script>
+	</body>
+</html>
